@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href='index.html'><img src="/images/logo.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navMenu">
+              
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2 id="titleHolder">Simple Text Editor</h2>
+                <h2 id="title1">Simple Text Editor</h2>
+                <h2 id="title2">asd</h2>
+                <h2 id="title3">fgh</h2>
+                <p id="textHolder">A simple text editing application made with C++ and QT Framework. It allows basic operations
+                    met in other text editing apps, but keeps only the essentials.<br>
+                    It was a great opportunity to practice with classes and pointers.
+                </p>
+                <p id="text1">A simple text editing application made with C++ and QT Framework. It allows basic operations
+                    met in other text editing apps, but keeps only the essentials.<br>
+                    It was a great opportunity to practice with classes and pointers.</p>
+                <p id="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                     ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                     dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                      deserunt mollit anim id est laborum.</p>
+                <p id="text3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                     ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+                     dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                      deserunt mollit anim id est laborum.</p>
+                <a href="https://github.com/alexstan12/notepadAppTry">View Github repository</a>
+            </div>
+            <div class="imgBox">
+                <img src="/gifs/textEditorApp.gif" class="projectMedia">
+            </div>
+        </div>
+        <ul class="thumb projectsThumb">
+            <li><img src="/images/number1.png" onclick="imgSlider('/gifs/textEditorApp.gif'); changeText('title1','text1'); changeBgColor('#0c0303a6')"></li>
+            <li><img src="/images/number2.png" onclick="imgSlider('/images/number2.png'); changeText('title2','text2'); changeBgColor('#e60c2c')"></li>
+            <li><img src="/images//number3.png" onclick="imgSlider('/images/number3.png'); changeText('title3','text3'); changeBgColor('#1e1e1e')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="/images/facebook.png"></a></li>
+            <li><a href="#"><img src="/images/twitter.png"></a></li>
+            <li><a href="#"><img src="/images/git.png" width="45"></a></li>
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.navMenu').load('navMenu.html');
+            $('.sci').load('sci.html');
+        })
+        function imgSlider(anything){
+            document.querySelector('.projectMedia').src = anything;
+        }
+
+        function changeBgColor(color){
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const navMenu = document.querySelector('.navMenu');
+            toggleMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+        function changeText(title, text){
+            var selectedTitle = document.getElementById(title).innerHTML;
+            var selectedPar = document.getElementById(text).innerHTML;
+            document.querySelector("#textHolder").innerHTML = selectedPar;
+            document.querySelector("#titleHolder").innerHTML = selectedTitle; 
+        }
+    </script>
+</body>
+</html>

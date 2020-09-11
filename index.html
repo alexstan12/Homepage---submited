@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href='index.html'><img src="/images/logo.png" alt="" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navMenu">
+              
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox homeDescr">
+                <h2>This is <br><span>Homepage</span></h2>
+                <p>This is first CS50 Web Track assignment, called "Homepage".
+                    It's an introduction to making <b>beautiful</b>(?tried my best), responsive websites
+                    that include multiple HTML tags, CSS properties and JS scripts.<br>
+                    Plus, my little extra :). 
+                </p>
+                <a href="projects.html">View some of my projects</a>
+            </div>
+            <div class="homeImg">
+                <img src="/images/cs50-gotham_medium.png" alt="" class="pepsi ">
+            </div>
+        </div>
+        
+        <ul class="sci">
+            <li><a href="#"><img src="/images/facebook.png"></a></li>
+            <li><a href="#"><img src="/images/twitter.png"></a></li>
+            <li><a href="#"><img src="/images/git.png" width="45"></a></li>
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.navMenu').load('navMenu.html');
+            $('.sci').load('sci.html');
+        })
+        function imgSlider(anything){
+            document.querySelector('.pepsi').src = anything;
+        }
+
+        function changeBgColor(color){
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const navMenu = document.querySelector('.navMenu');
+            toggleMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href='index.html'><img src="/images/logo.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggle();"></div>
+            <ul class="navMenu">
+              
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Alexandru Marius <br><span>Stan</span></h2>
+                <p> I am a  self-taught software developer beacause i like the process of making-things work and understanding
+                    what's under the hood. I have gone through the basics of Computer Science with Harvard's "CS50: Intro to 
+                    Computer Science" where I learned fundamentals of memory allocation and data-structures with C, automated things with Python
+                    and managed databases with SQL. Before this, I took a course on OOP Concepts and STL in C++, where I gained a deeper 
+                    knowledge on pointers and memory allocation, as well as class manipulation.
+                    QT is a framework that i played with while learning C++, in order to develop a simple NotePad app.
+                </p>
+                <a href="projects.html">View All</a>
+            </div>
+            <div class="myPhoto">
+                <img src="/images/eu.png">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li ><img src="/images/eu.png" onclick="imgSlider('/images/eu.png'); changeBgColor('#0c0303a6')"></li>
+            <li><img src="/images/code1.png" onclick="imgSlider('/images/code1.png'); changeBgColor('#e60c2c')"></li>
+            <li><img src="/images/code2.jpg" onclick="imgSlider('/images/code2.jpg'); changeBgColor('#1e1e1e')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="/images/facebook.png"></a></li>
+            <li><a href="#"><img src="/images/twitter.png"></a></li>
+            <li><a href="#"><img src="/images/git.png" width="45"></a></li>
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.navMenu').load('navMenu.html');
+            $('.sci').load('sci.html');
+        })
+        function imgSlider(anything){
+            document.querySelector('.myPhoto img').src = anything;
+        }
+
+        function changeBgColor(color){
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const navMenu = document.querySelector('.navMenu');
+            toggleMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+        
+        
+    </script>
+</body>
+</html>
